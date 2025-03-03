@@ -21,14 +21,16 @@ const Deck = () => {
 
   let deckID = Number(query);
 
+  
+
   return (
     <View className="relative flex  p-8 gap-2 ">
       <Text className="flex-1 items-center justify-center  text-2xl text-center text-yellow-950 bg-gray-400 h-12">
-        {decks[deckID].title}
+        {decks[deckID]?.title}
       </Text>
 
       <View className="flex flex-row gap-2  flex-wrap ">
-        {decks[deckID].cards?.map((card, i) => {
+        {decks[deckID]?.cards?.map((card, i) => {
           return (
             <Card
               key={i}
@@ -57,7 +59,7 @@ const Deck = () => {
       >
         Review
       </Link>
-      {add && <Addbox deckID={deckID} setAdd={setAdd} add={add} />}
+      {add && <Addbox deckID={deckID} setAdd={setAdd} add={add} card={ true} />}
     </View>
   );
 };

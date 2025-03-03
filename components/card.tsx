@@ -2,11 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
 
-type CardProps = {
-    word: string,
-    meaning: string,
-    id:number
-}
+import { CardProps } from '@/types/types'
+
 
 const Card = ({word,meaning,id}:CardProps) => {
   return (
@@ -15,7 +12,9 @@ const Card = ({word,meaning,id}:CardProps) => {
         <Text className="font-psemibold text-xl text-center">{word}</Text>
         <View className="h-[px] border border-gray-600 bg-gray-600 w-3/4  "></View>
         <Text className="text-xl text-center">{meaning}</Text>
-    
+        <Text className="text-xl text-center">{id}</Text>
+
+      
     </View>
   );
 }
