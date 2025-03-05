@@ -14,12 +14,23 @@ import cards from "@/data/cards";
 import Card from "@/components/card";
 import { icons } from "../../constants";
 import Addbox from "@/components/Addbox";
+import generateRandomIndex from "@/utilities/randomIndexGen";
 
 const Deck = () => {
+  let sessionLength = 10
+  
+
   const [add, setAdd] = useState(false);
+ 
   const { query } = useLocalSearchParams();
 
   let deckID = Number(query);
+   const [numOfCards, setNumOfCards] = useState(decks[deckID].cards.length);
+
+  let cardsList = Array.from( generateRandomIndex(numOfCards,sessionLength)
+  );
+
+  console.log(cardsList);
 
   
 
@@ -59,7 +70,7 @@ const Deck = () => {
       >
         Review
       </Link>
-      {add && <Addbox deckID={deckID} setAdd={setAdd} add={add} card={ true} />}
+      {add && <Addbox deckID={deckID} setAdd={setAdd} add={add} card={ true} numOfCards={numOfCards} setNumOfCards={setNumOfCards} />}
     </View>
   );
 };

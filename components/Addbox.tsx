@@ -6,7 +6,7 @@ import { AddboxProps } from '@/types/types'
 
 
 const Addbox = ({
-  deckID,setAdd,add,card
+  deckID,setAdd,add,card,numOfCards,setNumOfCards
 }: AddboxProps) => {
 
   const [CardForm, setCardForm] = useState({
@@ -56,6 +56,7 @@ const Addbox = ({
         word: word,
         meaning:meaning,
       });
+      setNumOfCards(decks[deckID].cards.length)
       setAdd(!add);
     }
   }

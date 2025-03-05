@@ -14,7 +14,9 @@ type AddboxProps = {
   deckID: number;
   setAdd: React.Dispatch<React.SetStateAction<boolean>>;
   add: boolean;
-  card:boolean
+  card: boolean;
+  numOfCards: number;
+  setNumOfCards: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export {CardProps, DeckComponentProps, AddboxProps}
